@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{66C1241A-84A8-426F-A3B9-603DA47DE52E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>BalistaCalc</RootNamespace>
+    <AssemblyName>BalistaCalc</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="accelerated_move.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="accelerated_move.Designer.cs">
+      <DependentUpon>accelerated_move.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CircleMove.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CircleMove.Designer.cs">
+      <DependentUpon>CircleMove.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classic_aceler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Classic_aceler.Designer.cs">
+      <DependentUpon>Classic_aceler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="common_move.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="common_move.Designer.cs">
+      <DependentUpon>common_move.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FInfo.Designer.cs">
+      <DependentUpon>FInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FreeFall.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FreeFall.Designer.cs">
+      <DependentUpon>FreeFall.cs</DependentUpon>
+    </Compile>
+    <Compile Include="lineCommon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="lineCommon.Designer.cs">
+      <DependentUpon>lineCommon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Phys_Dict.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Phys_Dict.Designer.cs">
+      <DependentUpon>Phys_Dict.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ThrowMove.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThrowMove.Designer.cs">
+      <DependentUpon>ThrowMove.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="accelerated_move.resx">
+      <DependentUpon>accelerated_move.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CircleMove.resx">
+      <DependentUpon>CircleMove.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classic_aceler.resx">
+      <DependentUpon>Classic_aceler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="common_move.resx">
+      <DependentUpon>common_move.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FInfo.resx">
+      <DependentUpon>FInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FreeFall.resx">
+      <DependentUpon>FreeFall.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lineCommon.resx">
+      <DependentUpon>lineCommon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Phys_Dict.resx">
+      <DependentUpon>Phys_Dict.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="ThrowMove.resx">
+      <DependentUpon>ThrowMove.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Background_physic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
