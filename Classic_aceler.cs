@@ -41,6 +41,33 @@ namespace BalistaCalc
             }
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            vtext.Text = "";
+
+            atext.Text = "";
+            ttext.Text = "";
+            stext.Text = "";
+
+
+            vres.Text = "Нет данных";
+
+            ares.Text = "Нет данных";
+            tres.Text = "Нет данных";
+            sres.Text = "Нет данных";
+
+            if(isDefault)
+            {
+                v0res.Text = "0";
+            }
+
+            else
+            {
+                v0res.Text = "";
+            }
+
+        }
+
         bool ab, v0b, vb, sb, tb;
 
         public Classic_aceler()
@@ -308,11 +335,7 @@ namespace BalistaCalc
             }
 
 
-            vtext.Text = "";
             
-            atext.Text = "";
-            ttext.Text = "";
-            stext.Text = "";
 
             if(isDefault)
             {

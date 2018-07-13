@@ -61,6 +61,13 @@ namespace BalistaCalc
                     a.ShowDialog();
                     
                     break;
+
+                case 2:
+                    Forces f2 = new Forces();
+
+                    f2.ShowDialog();
+
+                    break;
             }
 
         }
@@ -101,5 +108,7 @@ namespace BalistaCalc
             Phys_Dict ph = new Phys_Dict();
             ph.ShowDialog();
         }
+
+  
     }
 }

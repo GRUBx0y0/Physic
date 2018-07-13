@@ -50,6 +50,17 @@ namespace BalistaCalc
 
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            vtext.Text = "";
+            stext.Text = "";
+            ttext.Text = "";
+
+            vres.Text = "Нет данных";
+            sres.Text = "Нет данных";
+            tres.Text = "Нет данных";
+        }
+
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -196,9 +207,7 @@ namespace BalistaCalc
                 }
 
 
-                vtext.Text = "";
-                stext.Text = "";
-                ttext.Text = "";
+                
 
                 tb = false;
                 sb = false;

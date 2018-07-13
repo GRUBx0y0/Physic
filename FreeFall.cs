@@ -24,6 +24,30 @@ namespace BalistaCalc
 
         double g;
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            vtext.Text = "";
+            ttext.Text = "";
+            stext.Text = "";
+
+            vres.Text = "Нет данных";
+
+            
+            tres.Text = "Нет данных";
+            sres.Text = "Нет данных";
+
+            if (isDefault)
+            {
+                v0res.Text = "0";
+            }
+
+            else
+            {
+                v0res.Text = "";
+            }
+
+        }
+
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
             if(radioButton2.Checked)
@@ -249,9 +273,7 @@ namespace BalistaCalc
             }
 
 
-            vtext.Text = "";
-            ttext.Text = "";
-            stext.Text = "";
+            
 
             if (isDefault)
             {

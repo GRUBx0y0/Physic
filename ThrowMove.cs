@@ -41,38 +41,90 @@ namespace BalistaCalc
                     tmgtext.Text = "";
                 }
 
+                if (tb)
+                {
+                    if (tmg > t)
+                    {
+                        norm_lab.Visible = false;
+                        label16.Visible = true;
+
+                        tmg = t;
+
+                    }
+
+                    else
+                    {
+                        label16.Visible = false;
+                        norm_lab.Visible = true;
+                    }
+                }
+
+
+
+
+                x = v0 * tmg * Math.Cos(a);
+                y = v0 * Math.Sin(a) * tmg - g * Math.Pow(tmg, 2) / 2;
+
+               
+
+                v = Math.Sqrt(Math.Pow(v0 * Math.Cos(a), 2) + Math.Pow(v0 * Math.Sin(a) - g * tmg, 2));
+                f = Math.Atan((Math.Sin(a) * v0 - g * tmg) / (Math.Cos(a) * v0));
+
+                fresg.Text = (f * 180 / Math.PI).ToString();
+                fresr.Text = f.ToString();
+                vkres.Text = v.ToString();
+
+
+
+                xres.Text = x.ToString();
+                yres.Text = y.ToString();
+
             }
 
-            if(tb)
+            else
             {
-                if(tmg > t)
-                {
-                    norm_lab.Visible = false;
-                    label16.Visible = true;
-
-                    tmg = t;
-
-                }
-
-                else
-                {
-                    label16.Visible = false;
-                    norm_lab.Visible = true;
-                }
+                xres.Text = "Нет данных";
+                yres.Text = "Нет данных";
+                fresr.Text = "Нет данных";
+                vkres.Text = "Нет данных";
+                fresg.Text = "Нет данных";
             }
 
 
+            
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            err_lab.Visible = true;
+            norm_lab.Visible = false;
+            label16.Visible = false;
 
 
-            x = v0 * tmg * Math.Cos(a);
-            y = v0 * Math.Sin(a) * tmg - g * Math.Pow(tmg, 2) / 2;
+            tmgtext.ReadOnly = true;
 
 
+            ttext.Text = "";
+            stext.Text = "";
+            atext.Text = "";
+            v0text.Text = "";
+            htext.Text = "";
 
+            tres.Text = "Нет данных";
+            sres.Text = "Нет данных";
+            aresg.Text = "Нет данных";
+            aresr.Text = "Нет данных";
+            v0res.Text = "Нет данных";
+            hres.Text = "Нет данных";
+            xres.Text = "Нет данных";
+            yres.Text = "Нет данных";
+            tmgtext.Text = "";
 
-            xres.Text = x.ToString();
-            yres.Text = y.ToString();
+            fresg.Text = "Нет данных";
+            fresr.Text = "Нет данных";
 
+            vkres.Text = "Нет данных";
         }
 
         bool ab, v0b, vb, sb, tb, hb, fb;
@@ -252,7 +304,17 @@ namespace BalistaCalc
                
             }
 
-
+            if(!v0b)
+            {
+                if(ab)
+                {
+                   if(tb)
+                    {
+                        v0 = t * g / (2 * Math.Sin(a));
+                        v0b = true;
+                    }
+                }
+            }
 
             if(!sb)
             {
@@ -277,7 +339,7 @@ namespace BalistaCalc
                             hb = true;
                         }
 
-                        v = Math.Sqrt(Math.Pow(v0 * Math.Cos(a) * t, 2) + Math.Pow(v0 * Math.Sin(a) - g * t,2));
+                        v = Math.Sqrt(Math.Pow(v0 * Math.Cos(a), 2) + Math.Pow(v0 * Math.Sin(a) - g * t,2));
                         f = Math.Atan((v0 * Math.Cos(a) * t) / (v0 * Math.Sin(a) - g * t));
                         vb = true;
                         fb = true;
@@ -306,7 +368,7 @@ namespace BalistaCalc
                             hb = true;
                         }
 
-                        v = Math.Sqrt(Math.Pow(v0 * Math.Cos(a) * t, 2) + Math.Pow(v0 * Math.Sin(a) - g * t, 2));
+                        v = Math.Sqrt(Math.Pow(v0 * Math.Cos(a), 2) + Math.Pow(v0 * Math.Sin(a) - g * t, 2));
                         f = Math.Atan((v0 * Math.Cos(a) * t) / (v0 * Math.Sin(a) - g * t));
                         vb = true;
                         fb = true;
@@ -327,7 +389,7 @@ namespace BalistaCalc
                         hb = true;
                     }
 
-                    v = Math.Sqrt(Math.Pow(v0 * Math.Cos(a) * t, 2) + Math.Pow(v0 * Math.Sin(a) - g * t, 2));
+                    v = Math.Sqrt(Math.Pow(v0 * Math.Cos(a), 2) + Math.Pow(v0 * Math.Sin(a) - g * t, 2));
                     f = Math.Atan((v0 * Math.Cos(a) * t) / (v0 * Math.Sin(a) - g * t));
                     vb = true;
                     fb = true;
@@ -341,7 +403,7 @@ namespace BalistaCalc
                     h = v0 * Math.Sin(a) * t / 2 - g * Math.Pow(t / 2, 2) / 2;
                     hb = true;
 
-                    v = Math.Sqrt(Math.Pow(v0 * Math.Cos(a) * t, 2) + Math.Pow(v0 * Math.Sin(a) - g * t, 2));
+                    v = Math.Sqrt(Math.Pow(v0 * Math.Cos(a), 2) + Math.Pow(v0 * Math.Sin(a) - g * t, 2));
                     f = Math.Atan((v0 * Math.Cos(a) * t) / (v0 * Math.Sin(a) - g * t));
                     vb = true;
                     fb = true;
@@ -352,7 +414,7 @@ namespace BalistaCalc
                     t = (2 * v0 * Math.Sin(a) / g);
                     tb = true;
 
-                    v = Math.Sqrt(Math.Pow(v0 * Math.Cos(a) * t, 2) + Math.Pow(v0 * Math.Sin(a) - g * t, 2));
+                    v = Math.Sqrt(Math.Pow(v0 * Math.Cos(a), 2) + Math.Pow(v0 * Math.Sin(a) - g * t, 2));
                     f = Math.Atan((v0 * Math.Cos(a) * t) / (v0 * Math.Sin(a) - g * t));
                     vb = true;
                     fb = true;
@@ -378,15 +440,7 @@ namespace BalistaCalc
                 tres.Text = "Нет данных";
             }
 
-            if (vb)
-            {
-                vkres.Text = v.ToString();
-            }
-
-            else
-            {
-                vkres.Text = "Нет данных";
-            }
+           
 
             if (v0b)
             {
@@ -421,7 +475,7 @@ namespace BalistaCalc
             if (ab)
             {
                 aresg.Text = (a * 180 / Math.PI).ToString();
-                aresr.Text = (a * Math.PI / 180).ToString();
+                aresr.Text = a.ToString();
             }
 
             else
@@ -430,27 +484,17 @@ namespace BalistaCalc
                 aresr.Text = "Нет данных";
             }
 
-            if (fb)
-            {
-                fresg.Text = (f * 180 / Math.PI).ToString();
-                fresr.Text = (f * Math.PI / 180).ToString();
-            }
+      
 
-            else
-            {
-                fresg.Text = "Нет данных";
-                fresr.Text = "Нет данных";
-            }
+            
 
+            //ttext.Text = "";
+            //stext.Text = "";
+            //atext.Text = "";
+            //v0text.Text = "";
+            //htext.Text = "";
 
-
-            ttext.Text = "";
-            stext.Text = "";
-            atext.Text = "";
-            v0text.Text = "";
-            htext.Text = "";
-
-            if(v0b && ab)
+            if (v0b && ab)
             {
                 err_lab.Visible = false;
                 norm_lab.Visible = true;
@@ -464,10 +508,13 @@ namespace BalistaCalc
                 tmgtext.ReadOnly = true;
             }
 
-           
+
+            xres.Text = "Нет данных";
+            yres.Text = "Нет данных";
+            fresr.Text = "Нет данных";
+            vkres.Text = "Нет данных";
+            fresg.Text = "Нет данных";
             tmgtext.Text = "";
-            xres.Text = "";
-            yres.Text = "";
             label16.Visible = false;
 
 

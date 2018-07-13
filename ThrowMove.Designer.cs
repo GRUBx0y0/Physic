@@ -56,7 +56,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label25 = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label16 = new System.Windows.Forms.Label();
+            this.err_lab = new System.Windows.Forms.Label();
+            this.norm_lab = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label34 = new System.Windows.Forms.Label();
             this.yres = new System.Windows.Forms.TextBox();
@@ -64,6 +68,9 @@
             this.label32 = new System.Windows.Forms.Label();
             this.xres = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
+            this.tmgtext = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.vkres = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
@@ -89,20 +96,14 @@
             this.v0res = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.tmgtext = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.norm_lab = new System.Windows.Forms.Label();
-            this.err_lab = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBox1
@@ -190,6 +191,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel4.Controls.Add(this.button2);
             this.panel4.Controls.Add(this.button1);
             this.panel4.Controls.Add(this.panel3);
             this.panel4.Controls.Add(this.panel2);
@@ -201,7 +203,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.LawnGreen;
-            this.button1.Location = new System.Drawing.Point(321, 17);
+            this.button1.Location = new System.Drawing.Point(311, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(99, 48);
             this.button1.TabIndex = 19;
@@ -373,14 +375,6 @@
             // 
             this.panel5.Controls.Add(this.panel7);
             this.panel5.Controls.Add(this.label25);
-            this.panel5.Controls.Add(this.label30);
-            this.panel5.Controls.Add(this.vkres);
-            this.panel5.Controls.Add(this.label31);
-            this.panel5.Controls.Add(this.label27);
-            this.panel5.Controls.Add(this.fresr);
-            this.panel5.Controls.Add(this.label28);
-            this.panel5.Controls.Add(this.fresg);
-            this.panel5.Controls.Add(this.label29);
             this.panel5.Controls.Add(this.label26);
             this.panel5.Controls.Add(this.aresr);
             this.panel5.Controls.Add(this.label20);
@@ -403,35 +397,93 @@
             this.panel5.Size = new System.Drawing.Size(1062, 302);
             this.panel5.TabIndex = 2;
             // 
-            // label25
+            // panel7
             // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label25.Location = new System.Drawing.Point(31, 135);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(58, 16);
-            this.label25.TabIndex = 48;
-            this.label25.Text = "Smax =";
+            this.panel7.BackColor = System.Drawing.Color.Gray;
+            this.panel7.Controls.Add(this.label16);
+            this.panel7.Controls.Add(this.err_lab);
+            this.panel7.Controls.Add(this.norm_lab);
+            this.panel7.Controls.Add(this.label3);
+            this.panel7.Controls.Add(this.panel6);
+            this.panel7.Controls.Add(this.tmgtext);
+            this.panel7.Controls.Add(this.label9);
+            this.panel7.Location = new System.Drawing.Point(563, 9);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(496, 290);
+            this.panel7.TabIndex = 49;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.ForeColor = System.Drawing.Color.Brown;
+            this.label16.Location = new System.Drawing.Point(97, 22);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(323, 26);
+            this.label16.TabIndex = 50;
+            this.label16.Text = "Вы установили значение времени больше, чем полное время!\r\n           Расчет коорд" +
+    "инат ведется по полному времени";
+            this.label16.Visible = false;
+            // 
+            // err_lab
+            // 
+            this.err_lab.AutoSize = true;
+            this.err_lab.ForeColor = System.Drawing.Color.Brown;
+            this.err_lab.Location = new System.Drawing.Point(77, 12);
+            this.err_lab.Name = "err_lab";
+            this.err_lab.Size = new System.Drawing.Size(345, 26);
+            this.err_lab.TabIndex = 49;
+            this.err_lab.Text = "    В данный момент провести расчет значений невозможно,\r\n вероятно, данных недос" +
+    "таточно, либо они полнустью отсутствуют";
+            // 
+            // norm_lab
+            // 
+            this.norm_lab.AutoSize = true;
+            this.norm_lab.ForeColor = System.Drawing.Color.Navy;
+            this.norm_lab.Location = new System.Drawing.Point(63, 12);
+            this.norm_lab.Name = "norm_lab";
+            this.norm_lab.Size = new System.Drawing.Size(379, 26);
+            this.norm_lab.TabIndex = 48;
+            this.norm_lab.Text = " Дополнительная информация о теле в произвольный момент времени\r\nВведите значение" +
+    " в поле t, программа автоматически проведет расчеты";
+            this.norm_lab.Visible = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.label3.Location = new System.Drawing.Point(315, 76);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(13, 13);
+            this.label3.TabIndex = 36;
+            this.label3.Text = "c";
             // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.panel6.Controls.Add(this.label34);
             this.panel6.Controls.Add(this.yres);
+            this.panel6.Controls.Add(this.label30);
             this.panel6.Controls.Add(this.label35);
             this.panel6.Controls.Add(this.label32);
+            this.panel6.Controls.Add(this.vkres);
             this.panel6.Controls.Add(this.xres);
+            this.panel6.Controls.Add(this.label31);
             this.panel6.Controls.Add(this.label33);
-            this.panel6.Location = new System.Drawing.Point(111, 81);
+            this.panel6.Controls.Add(this.fresg);
+            this.panel6.Controls.Add(this.label29);
+            this.panel6.Controls.Add(this.label27);
+            this.panel6.Controls.Add(this.label28);
+            this.panel6.Controls.Add(this.fresr);
+            this.panel6.Location = new System.Drawing.Point(62, 116);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(378, 31);
+            this.panel6.Size = new System.Drawing.Size(378, 166);
             this.panel6.TabIndex = 47;
             // 
             // label34
             // 
             this.label34.AutoSize = true;
             this.label34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label34.Location = new System.Drawing.Point(364, 12);
+            this.label34.Location = new System.Drawing.Point(362, 12);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(15, 13);
             this.label34.TabIndex = 30;
@@ -444,12 +496,13 @@
             this.yres.ReadOnly = true;
             this.yres.Size = new System.Drawing.Size(131, 20);
             this.yres.TabIndex = 29;
+            this.yres.Text = "Нет данных";
             // 
             // label35
             // 
             this.label35.AutoSize = true;
             this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label35.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.label35.ForeColor = System.Drawing.Color.Black;
             this.label35.Location = new System.Drawing.Point(210, 9);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(22, 16);
@@ -473,23 +526,54 @@
             this.xres.ReadOnly = true;
             this.xres.Size = new System.Drawing.Size(131, 20);
             this.xres.TabIndex = 26;
+            this.xres.Text = "Нет данных";
             this.xres.TextChanged += new System.EventHandler(this.xres_TextChanged);
             // 
             // label33
             // 
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label33.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.label33.ForeColor = System.Drawing.Color.Black;
             this.label33.Location = new System.Drawing.Point(1, 8);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(21, 16);
             this.label33.TabIndex = 25;
             this.label33.Text = "X:";
             // 
+            // tmgtext
+            // 
+            this.tmgtext.Location = new System.Drawing.Point(178, 72);
+            this.tmgtext.Name = "tmgtext";
+            this.tmgtext.ReadOnly = true;
+            this.tmgtext.Size = new System.Drawing.Size(131, 20);
+            this.tmgtext.TabIndex = 35;
+            this.tmgtext.TextChanged += new System.EventHandler(this.tmgtext_TextChanged);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.label9.Location = new System.Drawing.Point(161, 73);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(16, 16);
+            this.label9.TabIndex = 34;
+            this.label9.Text = "t:";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label25.Location = new System.Drawing.Point(31, 135);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(58, 16);
+            this.label25.TabIndex = 48;
+            this.label25.Text = "Smax =";
+            // 
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(895, 57);
+            this.label30.Location = new System.Drawing.Point(253, 62);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(26, 13);
             this.label30.TabIndex = 46;
@@ -498,26 +582,27 @@
             // 
             // vkres
             // 
-            this.vkres.Location = new System.Drawing.Point(758, 54);
+            this.vkres.Location = new System.Drawing.Point(116, 59);
             this.vkres.Name = "vkres";
             this.vkres.ReadOnly = true;
             this.vkres.Size = new System.Drawing.Size(131, 20);
             this.vkres.TabIndex = 45;
+            this.vkres.Text = "Нет данных";
             // 
             // label31
             // 
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label31.Location = new System.Drawing.Point(659, 55);
+            this.label31.Location = new System.Drawing.Point(45, 59);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(93, 16);
+            this.label31.Size = new System.Drawing.Size(75, 16);
             this.label31.TabIndex = 44;
-            this.label31.Text = "V[конечн] =";
+            this.label31.Text = "V[тела] =";
             // 
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(892, 151);
+            this.label27.Location = new System.Drawing.Point(250, 140);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(52, 13);
             this.label27.TabIndex = 43;
@@ -525,16 +610,17 @@
             // 
             // fresr
             // 
-            this.fresr.Location = new System.Drawing.Point(758, 147);
+            this.fresr.Location = new System.Drawing.Point(116, 136);
             this.fresr.Name = "fresr";
             this.fresr.ReadOnly = true;
             this.fresr.Size = new System.Drawing.Size(131, 20);
             this.fresr.TabIndex = 42;
+            this.fresr.Text = "Нет данных";
             // 
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(892, 125);
+            this.label28.Location = new System.Drawing.Point(250, 114);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(50, 13);
             this.label28.TabIndex = 41;
@@ -542,26 +628,27 @@
             // 
             // fresg
             // 
-            this.fresg.Location = new System.Drawing.Point(758, 121);
+            this.fresg.Location = new System.Drawing.Point(116, 110);
             this.fresg.Name = "fresg";
             this.fresg.ReadOnly = true;
             this.fresg.Size = new System.Drawing.Size(131, 20);
             this.fresg.TabIndex = 40;
+            this.fresg.Text = "Нет данных";
             // 
             // label29
             // 
             this.label29.AutoSize = true;
             this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label29.Location = new System.Drawing.Point(631, 135);
+            this.label29.Location = new System.Drawing.Point(63, 124);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(121, 16);
+            this.label29.Size = new System.Drawing.Size(55, 16);
             this.label29.TabIndex = 39;
-            this.label29.Text = "Угол падения =";
+            this.label29.Text = "Угол =";
             // 
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(483, 151);
+            this.label26.Location = new System.Drawing.Point(483, 183);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(52, 13);
             this.label26.TabIndex = 38;
@@ -569,11 +656,12 @@
             // 
             // aresr
             // 
-            this.aresr.Location = new System.Drawing.Point(349, 147);
+            this.aresr.Location = new System.Drawing.Point(349, 179);
             this.aresr.Name = "aresr";
             this.aresr.ReadOnly = true;
             this.aresr.Size = new System.Drawing.Size(131, 20);
             this.aresr.TabIndex = 37;
+            this.aresr.Text = "Нет данных";
             // 
             // label20
             // 
@@ -587,7 +675,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(483, 125);
+            this.label21.Location = new System.Drawing.Point(483, 157);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(50, 13);
             this.label21.TabIndex = 35;
@@ -609,6 +697,7 @@
             this.hres.ReadOnly = true;
             this.hres.Size = new System.Drawing.Size(131, 20);
             this.hres.TabIndex = 33;
+            this.hres.Text = "Нет данных";
             // 
             // label23
             // 
@@ -622,17 +711,18 @@
             // 
             // aresg
             // 
-            this.aresg.Location = new System.Drawing.Point(349, 121);
+            this.aresg.Location = new System.Drawing.Point(349, 153);
             this.aresg.Name = "aresg";
             this.aresg.ReadOnly = true;
             this.aresg.Size = new System.Drawing.Size(131, 20);
             this.aresg.TabIndex = 31;
+            this.aresg.Text = "Нет данных";
             // 
             // label24
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label24.Location = new System.Drawing.Point(322, 135);
+            this.label24.Location = new System.Drawing.Point(322, 167);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(29, 16);
             this.label24.TabIndex = 30;
@@ -645,6 +735,7 @@
             this.sres.ReadOnly = true;
             this.sres.Size = new System.Drawing.Size(131, 20);
             this.sres.TabIndex = 29;
+            this.sres.Text = "Нет данных";
             // 
             // label18
             // 
@@ -662,6 +753,7 @@
             this.tres.ReadOnly = true;
             this.tres.Size = new System.Drawing.Size(131, 20);
             this.tres.TabIndex = 26;
+            this.tres.Text = "Нет данных";
             // 
             // label19
             // 
@@ -690,6 +782,7 @@
             this.v0res.ReadOnly = true;
             this.v0res.Size = new System.Drawing.Size(131, 20);
             this.v0res.TabIndex = 20;
+            this.v0res.Text = "Нет данных";
             // 
             // label15
             // 
@@ -705,93 +798,24 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label12.Location = new System.Drawing.Point(480, 11);
+            this.label12.Location = new System.Drawing.Point(215, 9);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(101, 16);
             this.label12.TabIndex = 1;
             this.label12.Text = "Результаты:";
             this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
-            // label3
+            // button2
             // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label3.Location = new System.Drawing.Point(364, 59);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(13, 13);
-            this.label3.TabIndex = 36;
-            this.label3.Text = "c";
-            // 
-            // tmgtext
-            // 
-            this.tmgtext.Location = new System.Drawing.Point(227, 55);
-            this.tmgtext.Name = "tmgtext";
-            this.tmgtext.ReadOnly = true;
-            this.tmgtext.Size = new System.Drawing.Size(131, 20);
-            this.tmgtext.TabIndex = 35;
-            this.tmgtext.TextChanged += new System.EventHandler(this.tmgtext_TextChanged);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label9.Location = new System.Drawing.Point(210, 56);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(16, 16);
-            this.label9.TabIndex = 34;
-            this.label9.Text = "t:";
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.Gray;
-            this.panel7.Controls.Add(this.label16);
-            this.panel7.Controls.Add(this.err_lab);
-            this.panel7.Controls.Add(this.norm_lab);
-            this.panel7.Controls.Add(this.label3);
-            this.panel7.Controls.Add(this.panel6);
-            this.panel7.Controls.Add(this.tmgtext);
-            this.panel7.Controls.Add(this.label9);
-            this.panel7.Location = new System.Drawing.Point(349, 184);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(601, 115);
-            this.panel7.TabIndex = 49;
-            // 
-            // norm_lab
-            // 
-            this.norm_lab.AutoSize = true;
-            this.norm_lab.ForeColor = System.Drawing.Color.Navy;
-            this.norm_lab.Location = new System.Drawing.Point(70, 5);
-            this.norm_lab.Name = "norm_lab";
-            this.norm_lab.Size = new System.Drawing.Size(457, 26);
-            this.norm_lab.TabIndex = 48;
-            this.norm_lab.Text = "Здесь вы можете посмотреть координты тела в любой, произвольный момент времени\r\n " +
-    "                 Введите значение в поле t.  Программа автоматически проведет ра" +
-    "счеты";
-            this.norm_lab.Visible = false;
-            // 
-            // err_lab
-            // 
-            this.err_lab.AutoSize = true;
-            this.err_lab.ForeColor = System.Drawing.Color.Brown;
-            this.err_lab.Location = new System.Drawing.Point(126, 5);
-            this.err_lab.Name = "err_lab";
-            this.err_lab.Size = new System.Drawing.Size(345, 26);
-            this.err_lab.TabIndex = 49;
-            this.err_lab.Text = "    В данный момент провести расчет координат невозможно,\r\n вероятно, данных недо" +
-    "статочно, либо они полнустью отсутствуют";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.ForeColor = System.Drawing.Color.Brown;
-            this.label16.Location = new System.Drawing.Point(146, 15);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(323, 26);
-            this.label16.TabIndex = 50;
-            this.label16.Text = "Вы установили значение времени больше, чем полное время!\r\n           Расчет коорд" +
-    "инат ведется по полному времени";
-            this.label16.Visible = false;
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button2.Location = new System.Drawing.Point(325, 52);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 20;
+            this.button2.Text = "Сбросить";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // ThrowMove
             // 
@@ -817,10 +841,10 @@
             this.panel2.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -895,5 +919,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label err_lab;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Button button2;
     }
 }

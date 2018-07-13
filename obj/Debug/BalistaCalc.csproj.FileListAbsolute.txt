@@ -17,3 +17,4 @@ C:\Users\alexf\OneDrive\Документы\Visual Studio 2017\Projects\BalistaCa
 C:\Users\alexf\OneDrive\Документы\Visual Studio 2017\Projects\BalistaCalc\BalistaCalc\obj\Debug\BalistaCalc.Phys_Dict.resources
 C:\Users\alexf\OneDrive\Документы\Visual Studio 2017\Projects\BalistaCalc\BalistaCalc\obj\Debug\BalistaCalc.FreeFall.resources
 C:\Users\alexf\OneDrive\Документы\Visual Studio 2017\Projects\BalistaCalc\BalistaCalc\obj\Debug\BalistaCalc.ThrowMove.resources
+C:\Users\alexf\OneDrive\Документы\Visual Studio 2017\Projects\BalistaCalc\BalistaCalc\obj\Debug\BalistaCalc.Forces.resources
